@@ -1,5 +1,10 @@
 import json, os.path
 
+'''
+ask_survey: asks a single set of survey questions
+    questions(list) :   list of strings
+    keys(list)      :   list of strings
+'''
 def ask_survey(questions, keys):
     # Create the dictionary to store the responses.
     answers = {}
@@ -13,7 +18,7 @@ def ask_survey(questions, keys):
     return answers
 
 '''
-output_to_file:
+output_to_file: writes collected data to a JSON file
     list_of_answers(list)   :   list of dictionaries
     filename(str)           :   string containing the file name
 '''
@@ -38,6 +43,7 @@ def output_to_file(list_of_answers, filename):
             line += 1
         json_file.write(']')
 
+    # # Another way of outputting - without with/as statements
     # if os.path.isfile("allanswers.json"):
     #     f = open("allanswers.json", "r")
     #     olddata = json.load(f)
@@ -60,6 +66,9 @@ def output_to_file(list_of_answers, filename):
     # f.write(']')
     # f.close()
 
+'''
+main: this is our main function where everything happens
+'''
 def main():
     # Create a list of survey questions and a list of related keys that
     # will be used when storing survey results.
