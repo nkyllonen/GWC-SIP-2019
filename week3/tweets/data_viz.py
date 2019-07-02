@@ -14,12 +14,20 @@ import matplotlib.pyplot as plt
 DATA_FILE = "tweets_small.json"
 
 '''
-make_textblob: example function -- change this however you want!
+get_polarity: build list of polarity values
+    tweets(list)    :   list of dictionaries
+    tweet_key(str)  :   string of dictionary key
 '''
-def make_textblob(string):
-    # Textblob sample:
-    tb = TextBlob(string)
-    return tb
+def get_polarity(tweets, tweet_key):
+    polarity = []
+
+    # loop through all tweets
+    for tweet in tweets:
+        text = tweet[tweet_key]
+        blob = TextBlob(text)
+        polarity.append(blob.polarity)
+
+    return polarity
 
 '''
 main: this is our main function where everything happens
@@ -29,8 +37,11 @@ def main():
     with open(DATA_FILE, "r") as tweetFile:
         tweetData = json.load(tweetFile)
 
-    blob = make_textblob("You are a brilliant computer scientist.")
-    print(blob.polarity)
+    # parse the text of each tweet -- get polarity of each text
+    all_polarity = get_polarity(tweetData, "text")
 
+'''
+where the program actually starts when you run it
+'''
 if __name__ == '__main__':
     main()
