@@ -85,11 +85,11 @@ def build_wordcloud(tweets, tweet_key):
     # 3. build frequency dictionary
     word_freq = big_blob.word_counts
     filtered = {}
-    ignored_words = ["and", "about", "http", "https", "the"]
+    ignored_words = ["and", "about", "http", "https", "the", "with", "your", "will", "from"]
 
     # filter short words
     for key in word_freq:
-        if (len(key) > 3) and key not in ignored_words:
+        if (len(key) > 3) and (key not in ignored_words):
             filtered[key] = word_freq[key]
 
     # 4. draw a word cloud
