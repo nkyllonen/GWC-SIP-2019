@@ -52,7 +52,7 @@ def calc_average(alist):
     total = 0
 
     for value in alist:
-        total =+ value
+        total += value
 
     return total / len(alist)
 
@@ -89,7 +89,15 @@ def main():
 
     # 3. plot values in a histogram
     p_bins = [ (x/10) for x in range(-10, 10) ]
-    plot_histogram(all_polarity, p_bins)
+    # p_bins = [-1, -0.5, 0, 0.5, 1.0]      # much simpler bins
+    p_limits = [-1.1, 1.1, 0, len(all_polarity)*(2/3)]
+    plot_histogram(all_polarity, p_bins, p_limits, "Tweet Polarities", "Polarity", "Number of Tweets")
+
+    s_bins = [ (x/10) for x in range(0, 10) ]
+    # s_bins = [0, 0.5, 1.0]                # much simpler bins
+    s_limits = [-0.1 , 1.1, 0, len(all_subjectivity)*(2/3)]
+    plot_histogram(all_subjectivity, s_bins, s_limits, "Tweet Subjectivity", "Subjectivity", "Number of Tweets")
+
 
 '''
 where the program actually starts when you run it
