@@ -1,13 +1,13 @@
 '''
 Module for sorting a dictionary using it's values.
-
-Source:
-https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
 '''
 import operator
 
 '''
 sort_by_values: returns list of sorted (key, value) tuples
+
+Source:
+https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
 '''
 def sort_by_values(dictionary):
     sorted_x = sorted(dictionary.items(), key=operator.itemgetter(1))
@@ -37,7 +37,7 @@ def tuples_to_lists(tuples):
     return (keys, values)
 
 def main():
-    x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+    x = {"a": 2, "b": 4, "c": 3, "d": 1, "e": 0, "f": 5}
 
     # sort by value into (key, value) tuples
     sorted = sort_by_values(x)
