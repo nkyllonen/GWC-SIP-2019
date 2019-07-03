@@ -16,13 +16,12 @@ def main():
 
     for y in data:
         d = data[y]
-        print(d)
         if (d["Year"] in totals):
             # if we DO have this data point, add!
             totals[d["Year"]] += d["People"]
         else:
             # if we DON'T have this data point, append!
-            totals[y] = d["People"]
+            totals[d["Year"]] = d["People"]
 
     print(totals)
 
