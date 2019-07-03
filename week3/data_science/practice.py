@@ -14,15 +14,12 @@ def main():
     print("list_of_records[0]:\n", list_of_records[0])
 
     for record in list_of_records:
-        state_info = record["State"]
-
         # 2. print out the state name and year for each row in the data set
-        print(state_info["Name"] , " (" , state_info["Code"] , ")", end="\t")
+        print(record["State"]["Name"] , " (" , record["Year"] , ")", end="\t")
 
         # 3. print out the total number of test-takers for each state per year
         total_info = record["Total"]
         print(total_info["Test-takers"] , " test takers")
-
 
 if __name__ == '__main__':
     main()
