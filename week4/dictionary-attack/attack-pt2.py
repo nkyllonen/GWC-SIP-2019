@@ -1,4 +1,5 @@
 FILE = "dictionary.txt"
+# my test file that only has a few  words
 TESTFILE = "dictionary.txt"
 
 '''
@@ -23,19 +24,14 @@ def check_substring(fileobject, word):
 
 def main():
     # Opens a file. You can now look at each line in the file individually with a statement like "for line in f:"
-    # f = open(FILE,"r")
-    f = open(TESTFILE,"r")
+    f = open(FILE,"r")
+    # f = open(TESTFILE,"r")
 
     # turn the words in the dictionary into a list
     word_list = f.read().strip().split('\n')
 
     print("Can your password survive a dictionary attack?")
 
-    # Take input from the keyboard, storing in the variable test_password
-    # NOTE - You will have to use .strip() to strip whitespace and newlines from the file and passwords
-
-    # Write logic to see if the password is in the dictionary file below here:
-    # invalid = is_in_file(f, test_password)
     invalid = True
     while (invalid):
         test_password = input("Type in a trial password: ")
@@ -52,6 +48,8 @@ def main():
                 invalid = True
         else:
             invalid = False
+
+    # exited while loop
     print("\nGood job making a password!")
 
 if __name__ == '__main__':
