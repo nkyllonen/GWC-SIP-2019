@@ -2,11 +2,17 @@ h1 {
   color : blue;
 }
 
-#item {
+#blue {
   color: green;
+  font-family:fantasy;
 }
 
-.content {
+#red {
+  color: red;
+  text-decoration: underline;
+}
+
+.list {
   padding: 30px;
   text-align: center;
 }
