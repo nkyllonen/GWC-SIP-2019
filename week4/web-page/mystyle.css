@@ -27,3 +27,8 @@ ul {
   text-decoration: none;
   color: purple;
 }
+
+/* format all my dog images the same */
+img.dog {
+  width: 300px;
+}
