@@ -32,3 +32,8 @@ ul {
 img.dog {
   width: 300px;
 }
+
+/* use my embedded font for all items within my body */
+body {
+  font-family: 'Dosis', sans-serif;
+}
