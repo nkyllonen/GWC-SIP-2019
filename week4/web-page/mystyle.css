@@ -1,7 +1,9 @@
+/* make all h1 elements blue */
 h1 {
   color : blue;
 }
 
+/* my tags */
 #blue {
   color: green;
   font-family:fantasy;
@@ -12,11 +14,15 @@ h1 {
   text-decoration: underline;
 }
 
+/* example class */
 .center-list {
   padding: 30px;
   text-align: center;
 }
 
+/* example making all ul elements be purple
+but showing that the #blue and #red ids
+override the purple color */
 ul {
   text-decoration: none;
   color: purple;
