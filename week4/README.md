@@ -14,6 +14,8 @@ https://github.com/GirlsFirst/SIP-2018-starter/tree/master/U2-Applications
 	https://fonts.google.com/
 - Using a browser's inspector tool to debug (press F12!)
 	https://designtlc.com/use-chrome-inspector-edit-website-css/
+- Learning Bootstrap, a CSS Framework
+	https://www.w3schools.com/bootstrap/bootstrap_ver.asp
 
 ### My versions of the slides:
 - 7/8 : U2L4 + U2L5
