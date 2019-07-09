@@ -12,7 +12,12 @@ h1 {
   text-decoration: underline;
 }
 
-.list {
+.center-list {
   padding: 30px;
   text-align: center;
+}
+
+ul {
+  text-decoration: none;
+  color: purple;
 }
