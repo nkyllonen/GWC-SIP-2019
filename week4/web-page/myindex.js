@@ -2,3 +2,4 @@
 
 /* create an alert popup BEFORE the DOM is loaded */
 alert("Welcome to my page about Aussies!");
+console.log("Hello!")

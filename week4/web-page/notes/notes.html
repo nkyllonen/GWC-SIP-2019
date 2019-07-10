@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First Web Page</h2>
+<p>My first paragraph.</p>
+
+<p>Never call document.write() after the document has finished loading.
+It will overwrite the whole document.</p>
+
+<!-- since this write() is WITHIN the HTML, it will not overwrite -->
+<script>
+document.write(5 + 6);
+</script>
+
+<!-- since this write() only happens on a button click, it WILL overwrite -->
+<!-- a button click happens after the HTML has loaded -->
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+<!-- best practice for trying to shorten lines - split after an operator -->
+<script>
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+</script>
+
+</body>
+</html>
