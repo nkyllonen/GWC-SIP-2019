@@ -19,3 +19,15 @@ function changeFontSize() {
     button.style.fontSize = "14px";
   }
 }
+
+function changeBodyFontSize() {
+  var body = document.body;
+  var cur_size = body.style.fontSize;
+
+  if (cur_size == "12px") {
+    body.style.fontSize = "20px";
+  }
+  else {
+    body.style.fontSize = "12px";
+  }
+}
