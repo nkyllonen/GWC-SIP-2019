@@ -1,0 +1,48 @@
+/* make all h1 elements blue */
+h1 {
+  color : blue;
+}
+
+/* my tags */
+#blue {
+  color: green;
+  font-family:fantasy;
+}
+
+#red {
+  color: red;
+  text-decoration: underline;
+}
+
+/* example class */
+.center-list {
+  padding: 30px;
+  text-align: center;
+}
+
+/* example making all ul elements be purple
+but showing that the #blue and #red ids
+override the purple color */
+ul {
+  text-decoration: none;
+  color: purple;
+}
+
+/* format all my dog images the same */
+img.dog {
+  width: 50%;
+  padding: 10px;
+}
+
+/* use my embedded font for all items within my body */
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+div.boxed {
+  /* border-style: solid;
+  border-color: mint; */
+  border: 2px solid teal;
+  border-radius: 5px;
+  padding: 10px;
+}
