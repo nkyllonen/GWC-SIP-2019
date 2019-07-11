@@ -55,7 +55,7 @@ function panToLocation() {
 
   // in browsers, spaces are "%20"
   query = query.replace(/ /g, "%20");
-  alert("my query: " + query);
+  // alert("my query: " + query);
 
   // build and make HTTP GET Request
   var countryRequest = new XMLHttpRequest();
@@ -67,6 +67,32 @@ function panToLocation() {
   console.log("Ready state: " + countryRequest.readyState);
   console.log("Status: " + countryRequest.status);
   console.log("Response: " + countryRequest.responseText);
+
+  // check for invalide states (200 is good)
+  if (countryRequest.status != 200) {
+    alert("Invalid request. Did not receive code 200.");
+    return;
+  }
+
+  // parse JSON to get data
+  var countryInfo = JSON.parse(countryRequest.responseText);
+  console.log(countryInfo);
+
+  var index = 0;
+
+  // for the US there are 2 entries...
+  if (countryInfo.length > 1) {
+    index = 1;
+  }
+
+  // var name = countryInfo[0]["name"];
+
+  // get real lon + lat data
+  var latlngInfo = countryInfo[index]["latlng"];
+  console.log(latlngInfo);
+
+  lat = latlngInfo[0];
+  lon = latlngInfo[1];
 
   var location = ol.proj.fromLonLat([lon, lat]);
 
