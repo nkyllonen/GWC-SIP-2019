@@ -50,10 +50,23 @@ function panToLocation() {
 
   // build Countries API query
   var query = "https://restcountries.eu/rest/v2/name/" + countryName;
-
-  // assume that we have our data
   var lon = 0.0;
   var lat = 0.0;
+
+  // in browsers, spaces are "%20"
+  query = query.replace(/ /g, "%20");
+  alert("my query: " + query);
+
+  // build and make HTTP GET Request
+  var countryRequest = new XMLHttpRequest();
+  countryRequest.open('GET', query, false);
+
+  countryRequest.send();
+
+  // output response
+  console.log("Ready state: " + countryRequest.readyState);
+  console.log("Status: " + countryRequest.status);
+  console.log("Response: " + countryRequest.responseText);
 
   var location = ol.proj.fromLonLat([lon, lat]);
 
