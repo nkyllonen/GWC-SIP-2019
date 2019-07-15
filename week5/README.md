@@ -4,6 +4,8 @@
 https://github.com/GirlsFirst/SIP-2018-starter/tree/master/U2-Applications
 
 ### Links:
+- Arduino C Language Reference
+	https://www.arduino.cc/reference/en/
 
 ### My versions of the slides:
 - 7/15 : U2L9 - Intro to Robotics
