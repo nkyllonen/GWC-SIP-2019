@@ -25,7 +25,7 @@ function getType() {
     return;
   }
 
-  // check for invalide states (200 is good)
+  // check for invalid states (200 is good)
   if (pokeRequest.status != 200) {
     alert("Invalid request. Did not receive code 200.");
     return;
