@@ -7,6 +7,13 @@ https://github.com/GirlsFirst/SIP-2018-starter/tree/master/U2-Applications
 - Arduino C Language Reference
 	https://www.arduino.cc/reference/en/
 
+### Notes:
+- BoEbot Manual:
+	- Chapter 2: page 42
+		- page 51 : LED schematics and diagrams
+		- page 52: GND diagram
+
+
 ### My versions of the slides:
 - 7/15 : U2L9 - Intro to Robotics
 	https://docs.google.com/presentation/d/19MhEV0DWSsb8dX5mPYXDSJqyOgz8lGvGhOnFEC9vNEo/edit?usp=sharing
