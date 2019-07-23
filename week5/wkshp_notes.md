@@ -1,0 +1,113 @@
+# 7/16 Resume Building Activity
+- Resume must haves
+	- full name
+	- education (up until now)
+	- major accomplishments (SAT scores)
+	- skills (coding languages, speaking languages)
+	- school projects/extracurriculars (like SIP!)
+	- clubs/sports
+	- voluteer experience
+	- work/internship experience
+	- city/state
+	- email address (professional email! can use school email)
+- Resume nice-to-haves
+	- hobbies
+	- photo (watch formatting - pocket-sized!)
+	- objective/summary
+	- length (coming out of HS or college, 1 page should be good)
+	- keep it clean! watch your fancy formatting - keep out infographics and such
+- Resume don't haves
+	- full address (for the sake of your security or safety)
+	- social media (unless it's relevent! Like Github)
+	- slang (be careful about your objective or your descriptions)
+	- unusual or fancy formatting
+	- references (fully optional, 3 is safe)
+- Formatting notes:
+	- some recruiters find color unprofessional and should only be used for more artsy positions
+	- easy to scan, easy to read
+	- sections and headers and bullet points
+	- putting things in chronological order (more relevant and more recent on top)
+	- PROOFREAD!
+- NOTES:
+	- recruiter's preference
+	- don't submit something generic
+	- really show why you're interested and how your background supports you
+	- be careful, because a bulky cover letter can hold a lot of mistakes (proofread!)
+	- often used by recruiters that are unsure
+	- save as a pdf! same for resumes!
+	- really think about your audience!
+	- have multiple copies! make different ones tailored towards different audiences
+	- they don't want to read a novel - keep it clean and concise
+	- GPA: provide it if you're asked, it's not super important - if it's really nice, then probably want to show it off, but don't have tio
+	- stay consistent with tense! it depends on your preference, but make sure your descriptions are at the very least
+
+# LinkedIn Workshop
+- nice to haves
+	- professional picture
+	- location, but not exact address
+	- smiling in the picture! nice clothes
+	- background/banner photo that is relevant
+	- description: little snapshot of you and maybe what you're looking for
+	- concise bullet point descriptions (most important on top)
+	- this can be where you put a lot more information than on your resume
+	- HS and College (include activities you were involved in)
+	- interests, volunteering
+
+# Panel Notes
+	- it's okay to go into college not knowing
+	- you CAN change majors! it's a thing that many people do
+	- look into auditing classes! or taking them pass/fail! For some people, this can give you freedom to try different things with less stress about grades
+	- look into schools that may allow you to "design your own major" if you're concerned about having interdisciplinary interests that don't overlap much - you might be able to find a way!
+	- "internships are like dating before marriage" - learn what it's like earlier!
+	- keep learning, keep challenging yourself - maybe have a goal and choose a tougher path
+	- how to explore?
+		- talk to other people about what they do!
+		- ask people with jobs
+		- what do they do?
+		- go to company websites -- contact me, about us -- reach out and ask! Express your interest through email, learn about the company
+		- networking! LinkedIn! ask friends, connect with people
+		- read about companies, follow them on social media
+		- be persistent! (possible goals: talk to one new person a week, explore one new thing each month)
+		- volunteer to work with professors -- soak in information and gain experience -- become part of their network
+		- put yourself in uncomfortable situations -- know how to speak and communicate
+		- don't be afraid of unpaid internships
+		- learn to thrive in uncomfortable situations -- thrive in ambiguity and uncertainty
+	- college choices:
+		- size
+		- general education
+		- go by your gut feelings -- visit, sit back, and take it all in
+		- languages available
+		- basketball game..?
+		- a good college doesn't guarantee success, it guarantees an initial "wow"
+		- money
+		- start at a community college -- can try to figure things out here before transfering
+		- top schools are tough!
+		- the student life / community -- what is it like to be a student there? ask students!
+		- pursue your interests
+		- have options! apply to more than just a few -- have a diverse pool (reach schools and also "easier" schools)
+		- reach out to people and ask them for their perspectives
+		- informal / informational interviews with prospective students
+		- class sizes -- learning style (small group, big group?)
+		- school ranking isn't everything!
+		- look into what the college environment is like -- are they less diverse? do you want a highly diverse place? are they more open and less strict?
+	- how to get an internship?
+		- ask! keep asking
+		- google it!
+		- reach out to companies and people and express your interest -- be inquisitive!
+		- find a graduate student that needs help -- if there are topics or subjects that interest you, look into research labs at universities
+		- career fairs
+		- on campus clubs/societies/organizations
+		- reach out and contact companies using their contact us or the about me pages
+		- if you're interested in their mission or their product, anything, express that interest when you reach out
+		- use LinkedIn -- either to apply or as purely a reference 
+		- sometimes you don't know what is a good fit for you! maybe you think you know, but sometimes someone else will tell you "I think you'd be a good fit for _______"
+	- undergraduate research
+		- talk to professors! ask them about their research (do some background reading about their publications first! sounds a lot better if you have an idea first)
+	- how to stand out
+		- articulate why you're the right person for the role and why the company is right for you
+		- 15 min a day, try to write something -- it takes a long time and a lot of work to find the words to express why you're a good choice
+		- building a personality and "brand" -- volunteering, coding competition, online coding challenges, etc
+		- how do you come across? what's your attitude?
+		- what do you bring to the table?
+		- awards or accomplishments
+		- letters of recommendation
