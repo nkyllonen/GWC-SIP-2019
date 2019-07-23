@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- FOLLOWING THESE STEPS -->
+    <!-- https://developers.google.com/identity/sign-in/web/sign-in -->
+
+    <!-- 2. Specify your app's client ID -->
+    <meta name="google-signin-client_id"
+      content="541468215154-ubgfc0j489h9p4vkam3gf61o3naf1scf.apps.googleusercontent.com">
+      <!-- content="541468215154-5urr8782tgda87rgqb88gojvv787ckm3.apps.googleusercontent.com"> -->
+
+    <!-- 1. Load the Google Platform Library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Load the core of the Google JS Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h3>Google Authentication Example</h3>
+    <!-- 3. Add a Google Sign-In button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <a href="#" onclick="signOut();">Sign out</a>
+  </body>
+</html>
