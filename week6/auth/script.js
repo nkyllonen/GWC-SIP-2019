@@ -14,8 +14,18 @@ var dataFile = "data.json";
 function getData() {
   $.getJSON(dataFile, function(result){
     $.each(result, function(name, object){
-      $("div").append(object + " ");
-      console.log(name + " " + object)
+      // what to do for each item in dataFile
+      var txt = document.createElement("p");  // Create with DOM
+      txt.innerHTML = "Results: " + "\n" + name + " " + object;
+      $("body").append(txt);   // Append the new elements
+      // $("div").append(object + " ");
+      // console.log(name + " " + object)
     });
   });
 }
+
+// function init() {
+  $(document).ready(getData());
+// }
+
+// init();
