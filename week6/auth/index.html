@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- FOLLOWING THESE STEPS -->
-
+    <!-- jquery library in Google API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script src="script.js"></script>
   </head>
   <body>
-    <h3>Google Authentication Example</h3>
+    <h3>Fruit Data JSON Example</h3>
+    <!-- <button id="get-data" onclick="readJSON();">Get Data</button>
 
-     <!-- Add to bottom of your <body> tag, but before you use any Firebase services: -->
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="/__/firebase/6.3.1/firebase-app.js"></script>
+    <p>
+    <textarea id="output" row="5" cols="30"></textarea>
+    </p> -->
 
-      <!-- TODO: Add SDKs for Firebase products that you want to use
-           https://firebase.google.com/docs/web/setup#reserved-urls -->
 
-      <!-- Initialize Firebase -->
-      <script src="/__/firebase/init.js"></script>
+    <button onclick="getData();">Get JSON data</button>
+
+    <div></div>
   </body>
 </html>

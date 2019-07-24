@@ -1,0 +1,22 @@
+{
+  "fruits" : {
+    "banana" : {
+      "total" : 10,
+      "location" : "Costa Rica"
+    },
+    "orange" : {
+      "total" : 4,
+      "location" : "Florida"
+    }
+  },
+  "veggies" : {
+    "kale" : {
+      "total" : 6,
+      "location" : "California"
+    },
+    "lettuce" : {
+      "total" : 15,
+      "location" : "Idaho"
+    }
+  }
+}
