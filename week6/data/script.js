@@ -13,19 +13,17 @@ var dataFile = "data.json";
 
 function getData() {
   $.getJSON(dataFile, function(result){
+    console.log(typeof(result));
     $.each(result, function(name, object){
+      // console.log(result);
       // what to do for each item in dataFile
       var txt = document.createElement("p");  // Create with DOM
       txt.innerHTML = "Results: " + "\n" + name + " " + object;
-      $("body").append(txt);   // Append the new elements
-      // $("div").append(object + " ");
-      // console.log(name + " " + object)
+      var resultDiv = document.getElementById("result");
+      resultDiv.append(txt);
     });
   });
 }
 
-// function init() {
-  $(document).ready(getData());
-// }
-
-// init();
+// do this when the document is ready
+$(document).ready(getData());
