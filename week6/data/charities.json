@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Denny's",
+    "food": ["bacon", "bread"],
+    "charities": [],
+    "accepted": true
+  },
+  {
+    "name": "Starbucks",
+    "food": ["cookies", "bread"],
+    "charities": [],
+    "accepted": false
+  },
+  {
+    "name": "Jamba Juice",
+    "food": ["pineapple", "apple"],
+    "charities": [],
+    "accepted": false
+  }
+]

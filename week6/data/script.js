@@ -25,5 +25,25 @@ function getData() {
   });
 }
 
+function getRestaurant() {
+  console.log("getRestaurant");
+  var n = "denny's";
+  dataFile = "charities.json";
+  $.getJSON(dataFile, function(result){
+    $.each(result, function(name, object){
+      if(object["name"].toLowerCase() === n) {
+        // console.log(object);
+        if(object["accepted"] == true) {
+          alert("Shipment received!");
+        }
+      }
+      else {
+        console.log("no match");
+      }
+      // console.log(object["name"]);
+    });
+  });
+}
+
 // do this when the document is ready
-$(document).ready(getData());
+// $(document).ready(getData());
