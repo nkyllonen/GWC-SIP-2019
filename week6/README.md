@@ -34,5 +34,6 @@ https://github.com/GirlsFirst/SIP-2018-starter/tree/master/U2-Applications
 	https://docs.google.com/presentation/d/15VOU6Htrv5u1J7WfcGU56x3jWdUOfLedzHKUWBOp-Fw/edit?usp=sharing
 - 7/24 : U3L2 - Plan & Develop
 	https://docs.google.com/presentation/d/17Y-FJFiz1NnMLCjpthJLGIDKDGHTXIxdH9FSbKu70JY/edit?usp=sharing
-- 7/25 : U3L
+- 7/25 : U3L3 - Develop
+	https://docs.google.com/presentation/d/1MSsqYWP0nkNqdaUoMtQdJFhWbRA12jXVPJSF2gLXEQY/edit?usp=sharing
 - 7/26 : U3L
