@@ -67,33 +67,33 @@ function edit() {
   // console.log("edit");
 }
 
-// (function () {
-// var textFile = null,
-//   makeTextFile = function (text) {
-//     var data = new Blob([text], {type: 'text/plain'});
-//
-//     // If we are replacing a previously generated file we need to
-//     // manually revoke the object URL to avoid memory leaks.
-//     if (textFile !== null) {
-//       window.URL.revokeObjectURL(textFile);
-//     }
-//
-//     textFile = window.URL.createObjectURL(data);
-//
-//     return textFile;
-//   };
-//
-//
-//   var create = document.getElementById('create'),
-//     textbox = document.getElementById('textbox');
-//
-//   create.addEventListener('click', function () {
-//     var link = document.getElementById('downloadlink');
-//     link.href = makeTextFile(textbox.value);
-//     link.style.display = 'block';
-//   }, false);
-// })();
+// using a bunch of code from this StackOverflow page
+// https://stackoverflow.com/questions/21012580/is-it-possible-to-write-data-to-file-using-only-javascript
 
+function saveTextAsFile()
+{
+    var textToWrite = document.getElementById("inputTextToSave").value;
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
 
-// do this when the document is ready
-// $(document).ready(getData());
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
