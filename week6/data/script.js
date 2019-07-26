@@ -26,7 +26,6 @@ function getData() {
 }
 
 function getRestaurant() {
-  console.log("getRestaurant");
   var n = "denny's";
   dataFile = "charities.json";
   $.getJSON(dataFile, function(result){
@@ -44,6 +43,57 @@ function getRestaurant() {
     });
   });
 }
+
+function edit() {
+  // var obj = {
+  //   name: "something",
+  //   food: ["crackers"],
+  //   charities: [],
+  //   accepted: false
+  // };
+  //
+  // var blob = new Blob([JSON.stringify(obj)], {type : 'application/json'});
+  // window.URL.revokeObjectURL("new.json");
+  // var file = window.URL.createObjectURL(blob);
+
+  //check if browser supports file api and filereader features
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+    var d = new Date(2013, 12, 5, 16, 23, 45, 600);
+    var generatedFile = new File(["Rough Draft ...."], "Draft1.txt", {type: "text/plain"});
+  }
+  else {
+    console.log("File/FileReader/FileList/Blob NOT SUPPORTED");
+  }
+  // console.log("edit");
+}
+
+// (function () {
+// var textFile = null,
+//   makeTextFile = function (text) {
+//     var data = new Blob([text], {type: 'text/plain'});
+//
+//     // If we are replacing a previously generated file we need to
+//     // manually revoke the object URL to avoid memory leaks.
+//     if (textFile !== null) {
+//       window.URL.revokeObjectURL(textFile);
+//     }
+//
+//     textFile = window.URL.createObjectURL(data);
+//
+//     return textFile;
+//   };
+//
+//
+//   var create = document.getElementById('create'),
+//     textbox = document.getElementById('textbox');
+//
+//   create.addEventListener('click', function () {
+//     var link = document.getElementById('downloadlink');
+//     link.href = makeTextFile(textbox.value);
+//     link.style.display = 'block';
+//   }, false);
+// })();
+
 
 // do this when the document is ready
 // $(document).ready(getData());
