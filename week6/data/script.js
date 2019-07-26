@@ -142,3 +142,26 @@ function getSearchData() {
         }
   });
 }
+
+function getBoba() {
+  var location = document.getElementById("zomato-input").value;
+  var city_id = getCityID(location);
+  var reqURL = "https://developers.zomato.com/api/v2.1/search?";
+  reqURL = reqURL + "entity_id=" + city_id + "&entity_type=city";
+  reqURL = reqURL + "q=boba";
+
+  $.ajax({
+        url: reqURL,
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("user-key", zomato_key);
+        }, success: function(data){
+            // console.log(data);
+            // get restaurants array
+            var all_rest = data["restaurants"];
+            console.log(all_rest);
+            // var name = all_rest[0]["restaurant"]["name"];
+            // var address = all_rest[0]["restaurant"]["location"]["address"];
+            // console.log(name + " at " + address);
+        }
+  });
+}
