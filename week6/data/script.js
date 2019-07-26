@@ -97,3 +97,25 @@ function saveTextAsFile()
 
     downloadLink.click();
 }
+
+function zomato() {
+  var loc = document.getElementById("zomato-input").value;
+  loc = loc.replace(/ /g, "%20");
+
+  var reqURL = "https://developers.zomato.com/api/v2.1/cities?";
+  reqURL = reqURL + "q=" + loc;
+
+  console.log("req: " + reqURL);
+
+  var zomato_key = "54b0eda3d9055df127947076b27dbd2c";
+
+  $.ajax({
+        url: reqURL,
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("user-key", zomato_key);
+        }, success: function(data){
+            console.log(data);
+            //process the JSON data etc
+        }
+  });
+}
