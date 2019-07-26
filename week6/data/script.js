@@ -135,7 +135,10 @@ function getSearchData() {
             // console.log(data);
             // get restaurants array
             var all_rest = data["restaurants"];
-            console.log(all_rest);
+            // console.log(all_rest);
+            var name = all_rest[0]["restaurant"]["name"];
+            var address = all_rest[0]["restaurant"]["location"]["address"];
+            console.log(name + " at " + address);
         }
   });
 }
