@@ -1,4 +1,5 @@
 var dataFile = "data.json";
+var zomato_key = "54b0eda3d9055df127947076b27dbd2c";
 
 // getJSON example: https://www.w3schools.com/jquery/ajax_getjson.asp
 // $(document).ready(function(){
@@ -98,24 +99,43 @@ function saveTextAsFile()
     downloadLink.click();
 }
 
-function zomato() {
-  var loc = document.getElementById("zomato-input").value;
+function getCityID(loc) {
   loc = loc.replace(/ /g, "%20");
 
   var reqURL = "https://developers.zomato.com/api/v2.1/cities?";
   reqURL = reqURL + "q=" + loc;
 
-  console.log("req: " + reqURL);
-
-  var zomato_key = "54b0eda3d9055df127947076b27dbd2c";
+  var city_id = 306;
 
   $.ajax({
         url: reqURL,
         beforeSend: function(xhr) {
              xhr.setRequestHeader("user-key", zomato_key);
         }, success: function(data){
-            console.log(data);
-            //process the JSON data etc
+            // console.log(data);
+            // get the city ID from the result
+            city_id = data["location_suggestions"][0]["id"];
+        }
+  });
+
+  return city_id;
+}
+
+function getSearchData() {
+  var location = document.getElementById("zomato-input").value;
+  var city_id = getCityID(location);
+  var reqURL = "https://developers.zomato.com/api/v2.1/search?";
+  reqURL = reqURL + "entity_id=" + city_id + "&entity_type=city";
+
+  $.ajax({
+        url: reqURL,
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("user-key", zomato_key);
+        }, success: function(data){
+            // console.log(data);
+            // get restaurants array
+            var all_rest = data["restaurants"];
+            console.log(all_rest);
         }
   });
 }
