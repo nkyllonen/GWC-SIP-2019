@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- jquery library in Google API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h3>Fruit Data JSON Example</h3>
+    <div id="result"></div>
+
+    <h3>Charities Example</h3>
+    <button onclick="getRestaurant()">Get</button>
+    <button onclick="edit()">Edit</button>
+
+    <!-- <p>
+      <textarea id="textbox">Type something here</textarea>
+      <button id="create">Create file</button>
+      <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+    </p> -->
+
+    <p>
+      <textarea id="inputTextToSave" placeholder="stuff to save"></textarea>
+      <textarea id="inputFileNameToSaveAs" placeholder="Filename"></textarea>
+    </p>
+    <button onclick="saveTextAsFile()">Save</button>
+
+    <h3> Zomato API </h3>
+    <p>
+      <textarea id="zomato-input">San Francisco</textarea>
+      <button onclick="getSearchData()">Click</button>
+    </p>
+
+    <p>
+      <textarea id="zomato-input">San Francisco</textarea>
+      <button onclick="getBoba()">Boba</button>
+    </p>
+
+    <h3> Open Cage Data </h3>
+    <p>
+      <textarea id="place">Cupertino, CA</textarea>
+      <button onclick="getLongLat()">Get</button>
+    </p>
+  </body>
+</html>
