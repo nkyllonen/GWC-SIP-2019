@@ -201,7 +201,6 @@ function getLongLat() {
   };
 
   request.send();  // make the request
-
 }
 
 function longLatResult() {
@@ -211,15 +210,19 @@ function longLatResult() {
     if (request.status == 200){
       // Success!
       var data = JSON.parse(request.responseText);
-      console.log(data);
+      // console.log(data);
       resultLoc = data.results[0]["geometry"];
       alert(resultLoc["lat"] + " , " + resultLoc["lng"]);
+
+      sessionStorage.setItem("lat", resultLoc["lat"]);
+      sessionStorage.setItem("lng", resultLoc["lng"]);
       // drawMap(lat, lng);
 
       // redirect with query parameters to pass data
-      window.location = "other.html"
-        + "?lat=" + resultLoc["lat"]
-        + "&lng=" + resultLoc["lng"];
+      window.location = "other.html";
+        // + "?lat=" + resultLoc["lat"]
+        // + "&lng=" + resultLoc["lng"];
+
     } else if (request.status <= 500){
       // We reached our target server, but it returned an error
 
@@ -243,4 +246,11 @@ function getQParams() {
   }
 
   alert(queries[0] + " , " + queries[1]);
+}
+
+function other() {
+  var output = sessionStorage.getItem("lat")
+    + " , " + sessionStorage.getItem("lng");
+
+  alert(output);
 }
