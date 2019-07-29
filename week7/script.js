@@ -1,5 +1,6 @@
 var dataFile = "data.json";
 var zomato_key = "54b0eda3d9055df127947076b27dbd2c";
+var resultLoc = [];
 
 // getJSON example: https://www.w3schools.com/jquery/ajax_getjson.asp
 // $(document).ready(function(){
@@ -211,10 +212,14 @@ function longLatResult() {
       // Success!
       var data = JSON.parse(request.responseText);
       console.log(data);
-      alert(data.results[0]["geometry"]["lat"] + " , " + data.results[0]["geometry"]["lng"]);
-
+      resultLoc = data.results[0]["geometry"];
+      alert(resultLoc["lat"] + " , " + resultLoc["lng"]);
       // drawMap(lat, lng);
 
+      // redirect with query parameters to pass data
+      window.location = "other.html"
+        + "?lat=" + resultLoc["lat"]
+        + "&lng=" + resultLoc["lng"];
     } else if (request.status <= 500){
       // We reached our target server, but it returned an error
 
@@ -224,4 +229,18 @@ function longLatResult() {
     } else {
       console.log("server error");
     }
+}
+
+// https://www.codeproject.com/Questions/795191/Passing-JavaScript-data-values-between-HTML-pages
+function getQParams() {
+  var queryString = decodeURIComponent(window.location.search);
+  queryString = queryString.substring(1);
+  var queries = queryString.split("&");
+
+  for (var i = 0; i < queries.length; i++)
+  {
+    document.write(queries[i] + "<br>");
+  }
+
+  alert(queries[0] + " , " + queries[1]);
 }
