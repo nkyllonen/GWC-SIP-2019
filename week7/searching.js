@@ -8,6 +8,8 @@ var casualCode = 16;
 var cuisineCodes = [];
 var estCodes = [];
 var locations = [];
+var myResults = [];
+var myRatings = [];
 
 // Detecting checkbox checks:
 //https://stackoverflow.com/questions/6878757/how-to-listen-to-when-a-checkbox-is-checked-in-jquery/6878786
@@ -15,6 +17,7 @@ var checkboxes , checkboxArray;
 var allCodes = [bobaCode, dessertCode];
 var allLocations = ["San Francisco", "Daly City", "Burlingame"];
 var allEstablishments = [casualCode];
+var allRatings = ["5", "4"];
 
 function confirmCheck() {
   if (this.checked) {
@@ -39,6 +42,12 @@ function confirmCheck() {
     else if (allEstablishments.includes(val)) {
       estCodes.push(val);
       getResults();
+    }
+    else if (allRatings.includes(val)) {
+      myRatings.push(val);
+      if (allLocations.length > 0) {
+        sortByRating();
+      }
     }
   }
 }
@@ -107,13 +116,15 @@ function getLocations(loc) {
                       // console.log(data);
                       // get restaurants array
                       var all_rest = data["restaurants"];
+                      myResults = data["restaurants"];
                       // console.log(all_rest);
-                      // var name = all_rest[0]["restaurant"]["name"];
+                      console.log(all_rest[0]);
                       // var address = all_rest[0]["restaurant"]["location"]["address"];
                       // alert(name + " at " + address);
 
                       all_rest.forEach(function(r) {
-                        console.log(r["restaurant"]["name"] + " at " + r["restaurant"]["location"]["address"]);
+                        console.log(r["restaurant"]["name"] + " at "
+                          + r["restaurant"]["location"]["address"]);
                       });
                   }
             });
@@ -121,6 +132,22 @@ function getLocations(loc) {
   });
 
   return city_id;
+}
+
+function sortByRating() {
+  myResults.forEach(function(rest) {
+    var rating = rest["restaurant"]["user_rating"]["aggregate_rating"];
+    // console.log(rating);
+    rating = Math.round(rating);
+    // console.log("new: " + rating);
+    myRatings.forEach(function(stars) {
+      // console.log(stars);
+      if (rating >= stars && rating < (stars + 0.5)) {
+        console.log(rest["restaurant"]["name"] + " at "
+          + rest["restaurant"]["location"]["address"]);
+      }
+    });
+  });
 }
 
 // do this when the document is ready -- happens BEFORE window load
