@@ -123,8 +123,8 @@ function getLocations(loc) {
                       // alert(name + " at " + address);
 
                       all_rest.forEach(function(r) {
-                        console.log(r["restaurant"]["name"] + " at "
-                          + r["restaurant"]["location"]["address"]);
+                        // console.log(r["restaurant"]["name"] + " at "
+                        //   + r["restaurant"]["location"]["address"]);
                       });
                   }
             });
@@ -135,6 +135,8 @@ function getLocations(loc) {
 }
 
 function sortByRating() {
+  var resultsDiv = document.getElementById("results");
+
   myResults.forEach(function(rest) {
     var rating = rest["restaurant"]["user_rating"]["aggregate_rating"];
     // console.log(rating);
@@ -143,8 +145,13 @@ function sortByRating() {
     myRatings.forEach(function(stars) {
       // console.log(stars);
       if (rating >= stars && rating < (stars + 0.5)) {
-        console.log(rest["restaurant"]["name"] + " at "
-          + rest["restaurant"]["location"]["address"]);
+        // console.log(rest["restaurant"]["name"] + " at "
+        //   + rest["restaurant"]["location"]["address"]);
+
+        var result = document.createElement("p");
+        result.innerHTML = rest["restaurant"]["name"] + " at "
+          + rest["restaurant"]["location"]["address"];
+        resultsDiv.append(result);
       }
     });
   });
