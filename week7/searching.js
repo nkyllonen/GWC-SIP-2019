@@ -27,14 +27,15 @@ function confirmCheck() {
     var val = this.value;
     val = val.replace(/\_/g, " ");
 
-    console.log(val);
+    // console.log(val);
 
     // collect all checked locations
-    if (allLocations.includes(val)) {
+    if (allLocations.includes(val) && !(locations.includes(val))) {
       locations.push(val);
       console.log(locations);
       getResults();
     }
+    // collect all checked codes
     else if (allCodes.includes(val)) {
       cuisineCodes.push(val);
       getResults();
@@ -43,11 +44,43 @@ function confirmCheck() {
       estCodes.push(val);
       getResults();
     }
+    // collect all checked ratings
     else if (allRatings.includes(val)) {
       myRatings.push(val);
       if (allLocations.length > 0) {
         sortByRating();
       }
+    }
+  }
+  else {
+    // checkbox has been unchecked
+    // alert("unchecked");
+
+    var val = this.value;
+    val = val.replace(/\_/g, " ");
+
+    // filter out the value that was unchecked
+    if (locations.length > 0) {
+      locations = locations.filter(
+        function(value, index, arr){
+          return value != val;
+      });
+      getResults();
+    }
+
+    if (cuisineCodes.length > 0) {
+      cuisineCodes = cuisineCodes.filter(
+        function(value, index, arr) {
+          return value != val;
+        });
+    }
+
+    if (myRatings.length > 0) {
+      myRatings = myRatings.filter(
+        function(value, index, arr) {
+          return value != val;
+        });
+      sortByRating();
     }
   }
 }
@@ -64,10 +97,13 @@ function getCheckboxes() {
 }
 
 function getResults() {
+  myResults = [];
   locations.forEach(function(loc) {
     var city_id = getLocations(loc);
     // console.log(city_id);
   });
+
+  displayResults();
 }
 
 function getLocations(loc) {
@@ -116,16 +152,14 @@ function getLocations(loc) {
                       // console.log(data);
                       // get restaurants array
                       var all_rest = data["restaurants"];
-                      myResults = data["restaurants"];
+                      myResults = myResults.concat(data["restaurants"]);
+                      // myResults = all_rest;
+                      // console.log(typeof(all_rest));
                       // console.log(all_rest);
-                      console.log(all_rest[0]);
                       // var address = all_rest[0]["restaurant"]["location"]["address"];
                       // alert(name + " at " + address);
-
-                      all_rest.forEach(function(r) {
-                        // console.log(r["restaurant"]["name"] + " at "
-                        //   + r["restaurant"]["location"]["address"]);
-                      });
+                      // displayResults();
+                      sortByRating();
                   }
             });
         }
@@ -136,24 +170,56 @@ function getLocations(loc) {
 
 function sortByRating() {
   var resultsDiv = document.getElementById("results");
+  // erase contents of div
+  resultsDiv.innerHTML = "";
 
   myResults.forEach(function(rest) {
     var rating = rest["restaurant"]["user_rating"]["aggregate_rating"];
     // console.log(rating);
-    rating = Math.round(rating);
+    var r = Math.round(rating);
     // console.log("new: " + rating);
-    myRatings.forEach(function(stars) {
-      // console.log(stars);
-      if (rating >= stars && rating < (stars + 0.5)) {
-        // console.log(rest["restaurant"]["name"] + " at "
-        //   + rest["restaurant"]["location"]["address"]);
 
-        var result = document.createElement("p");
-        result.innerHTML = rest["restaurant"]["name"] + " at "
-          + rest["restaurant"]["location"]["address"];
-        resultsDiv.append(result);
-      }
-    });
+    if (myRatings.length > 0) {
+      myRatings.forEach(function(stars) {
+        // console.log(stars);
+        if (r == stars) {
+          // console.log(rest["restaurant"]["name"] + " at "
+          //   + rest["restaurant"]["location"]["address"]);
+
+          // fill contents with new results
+          var result = document.createElement("p");
+          result.innerHTML = rest["restaurant"]["name"] + " at "
+            + rest["restaurant"]["location"]["address"]
+            + "\n\t Rating: " + rating;
+          resultsDiv.append(result);
+        }
+      });
+    }
+    else {
+      // fill contents with new results
+      var result = document.createElement("p");
+      result.innerHTML = rest["restaurant"]["name"] + " at "
+        + rest["restaurant"]["location"]["address"]
+        + "\n\t Rating: " + rating;
+      resultsDiv.append(result);
+    }
+  });
+}
+
+function displayResults() {
+  var resultsDiv = document.getElementById("results");
+  // erase contents of div
+  resultsDiv.innerHTML = "";
+
+  myResults.forEach(function(rest) {
+    // console.log(r["restaurant"]["name"] + " at "
+    //   + r["restaurant"]["location"]["address"]);
+
+    // fill contents with new results
+    var result = document.createElement("p");
+    result.innerHTML = rest["restaurant"]["name"] + " at "
+      + rest["restaurant"]["location"]["address"];
+    resultsDiv.append(result);
   });
 }
 
