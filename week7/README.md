@@ -28,4 +28,6 @@ https://github.com/GirlsFirst/SIP-2018-starter/tree/master/U2-Applications
 - 7/31 : U3L8
 	https://docs.google.com/presentation/d/10h94x-Q9e4Oq77EhGd521Gs8-FNmgbGpaFT344ezPcA/edit?usp=sharing
 - 8/1 : U3L
-- 8/2 : U3L
+- 8/2 : U3L10
+	slides:
+	Where Do We Go From Here Doc: https://docs.google.com/document/d/17G16GLVakhItEVFkakM6aPd9cvHhqx0CLfFCdrbKTxY/edit?usp=sharing
